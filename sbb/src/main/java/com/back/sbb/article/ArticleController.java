@@ -7,6 +7,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.access.AccessDeniedException;
 
 @Controller
 @RequiredArgsConstructor
@@ -55,5 +56,46 @@ public class ArticleController {
     public String detail(@PathVariable Long id, Model model) {
         model.addAttribute("article", articleService.get(id));
         return "article/detail";
+    }
+
+    @GetMapping("/article/modify/{id}")
+    public String modify(
+            @PathVariable Long id,
+            Authentication authentication,
+            Model model
+    ) {
+
+        Article article = articleService.get(id);
+
+        if (!article.getAuthor().getUsername()
+                .equals(authentication.getName())) {
+
+            throw new AccessDeniedException("수정 권한이 없습니다.");
+        }
+
+        model.addAttribute("article", article);
+
+        return "article/modify";
+    }
+
+    @PostMapping("/article/modify/{id}")
+    public String modify(
+            @PathVariable Long id,
+            @RequestParam String title,
+            @RequestParam String content,
+            Authentication authentication
+    ) {
+
+        Article article = articleService.get(id);
+
+        if (!article.getAuthor().getUsername()
+                .equals(authentication.getName())) {
+
+            throw new AccessDeniedException("수정 권한이 없습니다.");
+        }
+
+        articleService.modify(article, title, content);
+
+        return "redirect:/article/detail/" + id;
     }
 }

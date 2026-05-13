@@ -31,4 +31,12 @@ public class ArticleService {
 
         articleRepository.save(article);
     }
+
+    public void modify(Article article, String title, String content) {
+
+        article.setTitle(title);
+        article.setContent(content);
+
+        articleRepository.save(article);
+    }
 }
