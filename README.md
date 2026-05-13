@@ -1,4 +1,4 @@
-<img width="781" height="552" alt="스크린샷 2026-05-13 오후 2 54 15" src="https://github.com/user-attachments/assets/ded58a26-bc85-4284-bb9b-981249bb6eb2" /><img width="781" height="581" alt="스크린샷 2026-05-13 오후 2 51 28" src="https://github.com/user-attachments/assets/702f8704-e26e-4aa4-a2c5-9e0e32c838f2" /># 게시판 만들기 - 2차 테스트
+# 게시판 만들기 - 2차 테스트
 
 ## 기술 스택
 
@@ -84,14 +84,15 @@
 ## 로그인 페이지
 - URL : http://localhost:8080/user/login
 
-![Uploading 스크린샷 2026-05-13 오후 2.50.56.png…]()
+<img width="781" height="567" alt="스크린샷 2026-05-13 오후 3 01 44" src="https://github.com/user-attachments/assets/29fe1307-eff8-4130-b0b5-68909e13c60b" />
+
 
 ---
 
 ## 게시글 등록 페이지
 - URL : http://localhost:8080/article/create
 
-![Uploading 스크린샷 2026-05-13 오후 2.52.34.png…]()
+<img width="784" height="756" alt="스크린샷 2026-05-13 오후 3 02 22" src="https://github.com/user-attachments/assets/23f1cac0-00c2-4e4c-a2d2-272fad905989" />
 
 ---
 
@@ -105,4 +106,4 @@
 ## 게시글 상세 페이지
 - URL : http://localhost:8080/article/detail/{id}
 
-<img width="782" height="554" alt="스크린샷 2026-05-13 오후 2 54 33" src="https://github.com/user-attachments/assets/15446eb1-0207-48f8-8d51-d9441e47dd05" />
+<img width="781" height="552" alt="스크린샷 2026-05-13 오후 2 54 15" src="https://github.com/user-attachments/assets/ded58a26-bc85-4284-bb9b-981249bb6eb2" />
