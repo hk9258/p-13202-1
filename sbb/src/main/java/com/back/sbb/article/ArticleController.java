@@ -98,4 +98,23 @@ public class ArticleController {
 
         return "redirect:/article/detail/" + id;
     }
+
+    @GetMapping("/article/delete/{id}")
+    public String delete(
+            @PathVariable Long id,
+            Authentication authentication
+    ) {
+
+        Article article = articleService.get(id);
+
+        if (!article.getAuthor().getUsername()
+                .equals(authentication.getName())) {
+
+            throw new AccessDeniedException("삭제 권한이 없습니다.");
+        }
+
+        articleService.delete(article);
+
+        return "redirect:/article/list";
+    }
 }
