@@ -1,5 +1,6 @@
 package com.back.sbb.article;
 
+import com.back.sbb.user.SiteUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,11 +21,14 @@ public class ArticleService {
         return articleRepository.findById(id).orElseThrow();
     }
 
-    public void create(String title, String content) {
+    public void create(String title, String content, SiteUser author) {
         Article article = new Article();
+
         article.setTitle(title);
         article.setContent(content);
         article.setCreatedDate(LocalDateTime.now());
+        article.setAuthor(author);
+
         articleRepository.save(article);
     }
 }

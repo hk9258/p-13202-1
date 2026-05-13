@@ -20,4 +20,8 @@ public class UserService {
 
         userRepository.save(user);
     }
+
+    public SiteUser getUser(String username) {
+        return userRepository.findByUsername(username).orElseThrow();
+    }
 }
