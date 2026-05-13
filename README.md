@@ -77,7 +77,7 @@
 ## 회원가입 페이지
 - URL : http://localhost:8080/user/signup
 
-[(캡처 이미지 첨부)](http://localhost:8080/user/signup)
+<img width="787" height="755" alt="스크린샷 2026-05-13 오후 3 03 20" src="https://github.com/user-attachments/assets/2a6acf92-f845-457e-9ff6-4f6e6f5364cc" />
 
 ---
 
